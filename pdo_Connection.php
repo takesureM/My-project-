@@ -13,3 +13,14 @@ try{
     echo "Connection Failed:" .$e->getMessage();
 }
 $conn=null;
+
+
+// Using MSQLI PROCEDURALTo Connect to the database 
+
+$conn = mysqli_connect('localhost', 'root', '123445', 'blogPost');
+
+if(mysqli_connect_erro()){
+    die("Connection Error:" .mysqli_connect_erro());
+}else{
+    echo 'Connected Successfully';
+}
