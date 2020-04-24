@@ -1,3 +1,5 @@
+
+Connecting to the Database Using PHP and also with different Methods
 <?php 
 $DB_HOST = "localhost";
 $DB_USERNAME = "root";
@@ -21,6 +23,15 @@ $conn = mysqli_connect('localhost', 'root', '123445', 'blogPost');
 
 if(mysqli_connect_erro()){
     die("Connection Error:" .mysqli_connect_erro());
+}else{
+    echo 'Connected Successfully';
+}
+
+//Using The Object Orianted 
+ $conn = new mysqli('localhost', 'root', '123445', 'blogPost');
+
+if($conn->mysqli_connect_error()){
+    die("Connection Error" .$conn->mysqli_connect_error());
 }else{
     echo 'Connected Successfully';
 }
