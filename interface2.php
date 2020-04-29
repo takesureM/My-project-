@@ -20,7 +20,6 @@ class PayPal implements FlightTickets, LoginFirst {
     public function paymentProcess() {
         $this->loginFirst();
         $this->payNow();
-        echo 'login First'.'<br>';
         echo 'payPal';
     }
 }
@@ -30,7 +29,6 @@ class BankTransfer extends PayPal implements FlightTickets, LoginFirst {
     public function paymentProcess() {
         $this->registerFirst();
         $this->loginFirst();
-        echo 'Register First'.'<br>';
         echo 'BankTrasnfer';
         
     }
@@ -48,7 +46,6 @@ class MasterCard extends Visa implements FlightTickets, Discount {
     public function discount() {}
     public function paymentProcess() {
         $this->discount();
-        echo 'Discount'.'<br>';
         echo ' masterCard';
     }
 }
@@ -68,8 +65,10 @@ class payTicket {
     }
 }
 
+echo '<h1>You have successfully paid with:</h1>';
  $paymentSystem = new BankTransfer();
  $payticket = new payTicket();
- echo '<h1>You have successfully paid with:</h1>'. '' .$payticket->pay($paymentSystem);
+ echo $payticket->pay($paymentSystem);
+
 
 
